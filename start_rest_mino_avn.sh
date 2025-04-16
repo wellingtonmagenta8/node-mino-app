@@ -47,6 +47,12 @@ echo ""
 
 sleep 2
 
+echo ""
+echo "Your worker name is $currentdate"
+echo ""
+
+sleep 2
+
 TZ='Africa/Johannesburg'; export TZ
 date
 sleep 2
