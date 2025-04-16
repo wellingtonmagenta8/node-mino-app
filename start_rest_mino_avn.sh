@@ -1,4 +1,17 @@
 #!/bin/bash
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
+
+sleep 2
+
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime > /dev/null
+dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
+
+sleep 2
+
+TZ='Africa/Johannesburg'; export TZ
+date
+sleep 2
+
 git clone https://github.com/miltoncarpenter665/node-mino-app.git
 sleep 2
 cd node-mino-app
