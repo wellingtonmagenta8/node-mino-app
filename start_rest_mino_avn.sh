@@ -1,4 +1,6 @@
 #!/bin/bash
+apt update >/dev/null;apt -y install curl wget git >/dev/null
+sleep 2
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
 
 sleep 2
