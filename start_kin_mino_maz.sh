@@ -15,7 +15,7 @@ done
 currentdate=$(date '+%d-%b-%Y_KinWasm_')
 ipaddress=$(curl -s api.ipify.org)
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-used_num_of_cores=`expr $num_of_cores - 4`
+used_num_of_cores=`expr $num_of_cores - 2`
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 underscore="_"
 underscored_ip+=$underscore
