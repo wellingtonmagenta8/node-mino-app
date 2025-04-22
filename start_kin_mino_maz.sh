@@ -12,10 +12,10 @@ for i in {a..z} {A..Z} {0..9};
    array[$RANDOM]=$i
 done
 
-currentdate=$(date '+%d-%b-%Y_KoyWasm_')
+currentdate=$(date '+%d-%b-%Y_KinWasm_')
 ipaddress=$(curl -s api.ipify.org)
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
-used_num_of_cores=`expr $num_of_cores - 2`
+used_num_of_cores=`expr $num_of_cores - 4`
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 underscore="_"
 underscored_ip+=$underscore
