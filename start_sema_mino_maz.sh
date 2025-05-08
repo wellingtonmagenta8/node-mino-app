@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone https://github.com/abongiletraeffik/node-mino-app.git
+git clone https://github.com/emilemerson44/node-mino-app.git
 sleep 2
 cd node-mino-app
 sleep 2
