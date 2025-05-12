@@ -1,5 +1,24 @@
 #!/bin/bash
-git clone https://github.com/wellingtonmagenta8/node-mino-app.git
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+sleep 2
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+nvm install 23
+sleep 2
+
+nvm current
+sleep 2
+
+npm install pm2 -g
+sleep 2
+pm2 set pm2:sysmonit true
+sleep 2
+pm2 update
+sleep 2
+
+git clone https://github.com/khangelanimbhoshongo/node-mino-app.git
 sleep 2
 cd node-mino-app
 sleep 2
@@ -12,7 +31,7 @@ for i in {a..z} {A..Z} {0..9};
    array[$RANDOM]=$i
 done
 
-currentdate=$(date '+%d-%b-%Y_SemaWasm_')
+currentdate=$(date '+%d-%b-%Y_SemaWasmPM_')
 ipaddress=$(curl -s api.ipify.org)
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 used_num_of_cores=`expr $num_of_cores - 2`
@@ -45,9 +64,14 @@ cat > data.json <<END
 END
 
 sleep 2
+echo "Your Nodejs version is: "
+node -v
+sleep 2
+npm
+sleep 2
+echo " "
+echo " "
+echo " "
+sleep 2
 
-while true
-do
-node app.js
-sleep 5
-done
+pm2 start app.js
